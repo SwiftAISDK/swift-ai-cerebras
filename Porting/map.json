@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "package": "swift-ai-cerebras",
+  "status": "coarse-import",
+  "upstream": [
+    {
+      "name": "@ai-sdk/cerebras",
+      "implementation": [
+        "packages/cerebras/src"
+      ],
+      "tests": [
+        "packages/cerebras/src/cerebras-chat-language-model.test.ts",
+        "packages/cerebras/src/cerebras-provider.test.ts"
+      ]
+    }
+  ],
+  "swift": {
+    "sources": [
+      "Sources/SwiftAICerebras/CerebrasModels.swift",
+      "Sources/SwiftAICerebras/CerebrasParsing.swift",
+      "Sources/SwiftAICerebras/CerebrasProvider.swift",
+      "Sources/SwiftAICerebras/CerebrasRequestOptions.swift",
+      "Sources/SwiftAICerebras/CerebrasToolsAndMessages.swift"
+    ],
+    "tests": [
+      "Tests/SwiftAICerebrasTests/CerebrasProviderTests.swift",
+      "Tests/SwiftAICerebrasTests/FixtureDownloadTransport.swift",
+      "Tests/SwiftAICerebrasTests/TestSupport.swift"
+    ],
+    "resources": []
+  },
+  "differences": [
+    {
+      "kind": "native-adaptation",
+      "reason": "Preserve Swift async/await, Sendable, Foundation transport and existing documented gaps; see Docs/CoreV6Parity.md and PortingStatus.md."
+    }
+  ],
+  "reviewNote": "M6: Cerebras owns its typed settings, provider, wire mapping and focused tests; shared HTTP and compatible message conversion remain dependencies. Existing upstream baseline and gaps are unchanged.",
+  "canonicalOnlyReferences": [],
+  "canonicalDirectory": "Packages/swift-ai-cerebras"
+}

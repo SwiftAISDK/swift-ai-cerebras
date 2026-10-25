@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "package": "swift-ai-cerebras",
+  "version": "1.0.0",
+  "releaseID": "modular-3",
+  "source": {
+    "commit": "7fc9b4cd72f8f83b75ba7eee2e38d37127539317",
+    "baseCommit": "7fc9b4cd72f8f83b75ba7eee2e38d37127539317",
+    "workingTree": false,
+    "inputsSHA256": "49b802ba4a30454f78c9886ab3114537ef659ab3e6db7775479b7351f6e3f0ab"
+  },
+  "dependencies": [
+    {
+      "package": "swift-ai-core",
+      "from": "1.0.0"
+    },
+    {
+      "package": "swift-ai-openai-compatible",
+      "from": "1.0.0"
+    }
+  ],
+  "changes": [
+    {
+      "id": "remaining-package-extraction",
+      "notes": "Extract the existing runtime, typed settings and standalone tests from the compatibility aggregate. Preserve the reviewed npm baseline and existing capability/gap boundaries.",
+      "compatibility": "Initial independent Swift package version. Existing SwiftAISDK entry points remain in the development compatibility facade; no npm-version equivalence is implied."
+    }
+  ],
+  "canonicalDirectory": "Packages/swift-ai-cerebras",
+  "upstream": [
+    {
+      "name": "@ai-sdk/cerebras",
+      "reviewedVersion": "3.0.78",
+      "ledgerKind": "provider",
+      "evidence": "`AIProviders.cerebras`, `CerebrasLanguageModel`, `CerebrasProviderTests.swift`",
+      "reviewStatus": "imported-reviewed-with-gaps",
+      "archiveIntegrity": "sha512-GPPHxCe+CopLFPNddv51ficc5yo1sSOIWvHdDP8YvFftjPoWukulFL0Xvr/fzJAC8QjMQNtN1dkUzXPCJe0A6A==",
+      "sourceRef": "npm:@ai-sdk/cerebras@3.0.78",
+      "testRef": "682e2dd71456f14f9da33a1b983d1998c3a1184c",
+      "testRefRelationship": "inventory-snapshot-not-release-verified",
+      "contractFamilies": [],
+      "contractReview": "not-imported; inspect upstream declarations before extraction"
+    }
+  ],
+  "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
+  "canonicalInputs": [
+    {
+      "canonicalPath": ".github/workflows/package-check.yml",
+      "sha256": "7ff448e130f7aed96c38accdf828b6d993997ebc5317358347e9a70a649e67ca"
+    },
+    {
+      "canonicalPath": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-cerebras/Package.swift",
+      "sha256": "51e67ae5e5eb88b99d0ccbe3455be46b58d42b9e023b438dfd1df9cdeb3ca93a"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-cerebras/Porting/map.json",
+      "sha256": "a9675ed7396da6698c557425fd8ced5a3801448347a92e0b98fe48ec2fd5c6ad"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-cerebras/README.md",
+      "sha256": "cc19487d9d7e9ad76e0837205ec07b31bac2b84a14262cc6435c79cb8867744b"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasModels.swift",
+      "sha256": "616f2b6fcda4e41d97c95058d13706a4c5457295c04457b5098a237a30213668"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasParsing.swift",
+      "sha256": "44bbdc3d72214167691e0c90d55056cec869603b3626fea4100e841d19c5f7bf"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasProvider.swift",
+      "sha256": "74359a53111c9c0ddd9865b049fe0e433716e4fb23ee0526201b8e863a4f23f4"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasRequestOptions.swift",
+      "sha256": "3e29a4a13839bc015a6c0a393808ae0a4bf572beb3f4a1047454ba398372d24f"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasToolsAndMessages.swift",
+      "sha256": "e6b685b7fb9eda9bb3ddf50320ac513a81d2e49f755c39c0eaad495ba1410ed6"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-cerebras/Tests/SwiftAICerebrasTests/CerebrasProviderTests.swift",
+      "sha256": "ff167e618a122af68f11cab61bd67ab2b72b08e81fc628c5b7d7f68cfc2b8e6b"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-cerebras/Tests/SwiftAICerebrasTests/FixtureDownloadTransport.swift",
+      "sha256": "5e187e52b20f38abb81be5e5a70e4c2f1931df00fc05fb766b31844a058bda4c"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-cerebras/Tests/SwiftAICerebrasTests/TestSupport.swift",
+      "sha256": "cd78265ed8aecab2f4ab438e63d3d288bdebac7833e7af4fbac5cdc5f7c63bad"
+    }
+  ]
+}

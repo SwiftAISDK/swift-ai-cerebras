@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "packages": [
+    {
+      "name": "@ai-sdk/cerebras",
+      "reviewedVersion": "3.0.78",
+      "ledgerKind": "provider",
+      "evidence": "`AIProviders.cerebras`, `CerebrasLanguageModel`, `CerebrasProviderTests.swift`",
+      "reviewStatus": "imported-reviewed-with-gaps",
+      "archiveIntegrity": "sha512-GPPHxCe+CopLFPNddv51ficc5yo1sSOIWvHdDP8YvFftjPoWukulFL0Xvr/fzJAC8QjMQNtN1dkUzXPCJe0A6A==",
+      "sourceRef": "npm:@ai-sdk/cerebras@3.0.78",
+      "testRef": "682e2dd71456f14f9da33a1b983d1998c3a1184c",
+      "testRefRelationship": "inventory-snapshot-not-release-verified",
+      "contractFamilies": [],
+      "contractReview": "not-imported; inspect upstream declarations before extraction"
+    }
+  ]
+}

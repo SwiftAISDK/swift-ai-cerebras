@@ -1,0 +1,16 @@
+[
+  {
+    "order": 12,
+    "providerID": "cerebras",
+    "upstreamPackage": "@ai-sdk/cerebras",
+    "factoryNames": [
+      "AIProviders.cerebras"
+    ],
+    "capabilities": [
+      "language"
+    ],
+    "files": false,
+    "skills": false,
+    "notes": "Cerebras chat models mirror upstream Cerebras 3.0.78: `CEREBRAS_API_KEY`, custom base URL and headers, callable provider plus `languageModel`/`chat` aliases, `cerebras.chat` provider IDs, versioned user-agent suffix, typed provider-option validation, `maxOutputTokens` mapped to `max_completion_tokens`, current model IDs such as `gpt-oss-120b` and `qwen-3-235b-a22b-thinking-2507`, structured outputs, reasoning transform, structured-output tool-call normalization, flat Cerebras error schema, empty tool-call ID normalization, and unsupported embedding/image families."
+  }
+]
