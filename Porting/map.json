@@ -25,7 +25,8 @@
     "tests": [
       "Tests/SwiftAICerebrasTests/CerebrasProviderTests.swift",
       "Tests/SwiftAICerebrasTests/FixtureDownloadTransport.swift",
-      "Tests/SwiftAICerebrasTests/TestSupport.swift"
+      "Tests/SwiftAICerebrasTests/TestSupport.swift",
+      "Tests/SwiftAICerebrasTests/Weekly20261101CredentialsTests.swift"
     ],
     "resources": []
   },
