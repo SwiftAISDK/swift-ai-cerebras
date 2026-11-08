@@ -1,48 +1,48 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-cerebras",
-  "version": "1.1.0",
-  "releaseID": "weekly-upstream-20261101",
+  "version": "1.2.0",
+  "releaseID": "weekly-upstream-20261108",
   "source": {
-    "commit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
-    "baseCommit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
+    "commit": "8e233ff96fb809445aff9a5c06bb6149a24b94da",
+    "baseCommit": "8e233ff96fb809445aff9a5c06bb6149a24b94da",
     "workingTree": false,
-    "inputsSHA256": "b46f3e07b0a583d6fee81035987d74a06fc5c6109cbdf228144d1172d2c3676e"
+    "inputsSHA256": "987359720075cb67dd8bc45bdc049aee4c5d5a42b67a7eb148e697ce5d18bd77"
   },
   "dependencies": [
     {
       "package": "swift-ai-core",
-      "from": "1.2.0"
+      "from": "1.3.0"
     },
     {
       "package": "swift-ai-openai-compatible",
-      "from": "1.0.0"
+      "from": "1.2.0"
     }
   ],
   "changes": [
     {
-      "id": "weekly-upstream-20261101",
-      "notes": "Add native async throwing apiKeyProvider; resolve a fresh key immediately before every authenticated HTTP send/stream through the shared transport. Preserve static keys, custom header precedence, error/abort propagation, request builders and response parsers. The changed upstream provider test awaits resolved headers. The native translated test checks laziness and a fresh key across two actual sends. Reviewed upstream: @ai-sdk/cerebras 3.0.78 to 3.0.82. Validation passed: node Scripts/test-packages.mjs (all 52 owning package suites and the compatibility facade); node Scripts/sdk.mjs generate --check; node --test Scripts/tests/*.test.cjs (27 passed); docs-site check and build (100 pages). Live provider calls were not run.",
-      "compatibility": "Minor release for additive native API; existing static settings and call sites remain compatible. Updated direct dependency minimums are recorded in the manifest. Existing documented JS/framework and native product gaps remain; version-delta review does not imply full parity or live-service testing. Explicit custom authentication skips an unused credential supplier, a deliberate native callback-order adaptation."
+      "id": "weekly-upstream-20261108",
+      "notes": "Add queue-threshold header and effective tier metadata; preserve dynamic option pass-through and inherited endpoint/refusal behavior. Reviewed published upstream delta: @ai-sdk/cerebras 3.0.82 to 3.0.87. Validation passed: node Scripts/test-packages.mjs (all 52 owning packages plus the complete local facade; 3,965 reported tests and 33 explicit live skips); node Scripts/sdk.mjs dev test; node Scripts/sdk.mjs generate --check; node --test Scripts/tests/*.test.cjs (27 passed); core/provider isolation and version resolution; 52 deterministic package exports, 106 catalog consumers and four additional exact retained-minimum graphs; docs-site install/check/build (100 pages); git diff --check. No paid live-service calls were run. The publication pipeline requires successful Swift 6.3.3 CI at the exact canonical source before publishing.",
+      "compatibility": "Minor release for additive native functionality under the project convention. Existing call sites and exact old selectors are retained. Direct minimums change only for concrete API use or required inherited behavior. Version-delta review does not establish full-package parity or live-service acceptance. Updated direct ranges: swift-ai-core 1.2.0 to 1.3.0, swift-ai-openai-compatible 1.0.0 to 1.2.0."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-cerebras",
   "upstream": [
     {
       "name": "@ai-sdk/cerebras",
-      "reviewedVersion": "3.0.82",
+      "reviewedVersion": "3.0.87",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.cerebras`, `CerebrasLanguageModel`, `CerebrasProviderTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json",
+      "evidence": "`AIProviders.cerebras`, `CerebrasLanguageModel`, `CerebrasProviderTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-t3cZBjB3xp2ym5RGcY5HB9NZPf7rmsubM2CySZDo25I0MyiPcStl6bFbuAibfE5fcgEhAjMob5TVz3RIS4QcNg==",
-      "sourceRef": "npm:@ai-sdk/cerebras@3.0.82",
-      "testRef": "9b603d36186b75e58d5479445a96c76f6e2d2700",
+      "archiveIntegrity": "sha512-0UvtQOu5rp8qtrtWKO+sckC56WGro1KxhGbvBwGGna6EOITi4cKmMavfjcXfupb4Pph+0IHZBQ8zfB7zYIeNpQ==",
+      "sourceRef": "npm:@ai-sdk/cerebras@3.0.87",
+      "testRef": "0f3a85f92d1ce06ccde01d662407ef83e097a712",
       "testRefRelationship": "matching-release",
       "contractFamilies": [
         "LanguageModelV4",
         "ProviderV4"
       ],
-      "contractReview": "2026-11-01: published declarations, source and exact matching-release changed tests reviewed; scoped dispositions and Swift translations are in Docs/WeeklyUpstreamAudit20261101.json. Existing broader product gaps remain; reviewed delta is not full-package parity."
+      "contractReview": "2026-11-08: published declarations/source and exact matching-release changed tests reviewed; native implementations, per-file dispositions and broader retained gaps are recorded in Docs/WeeklyUpstreamAudit20261108.json. Reviewed delta is not full-package or live-service parity."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -61,35 +61,35 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Porting/map.json",
-      "sha256": "98947843a844402459069104266a8239bd9743fd7b4f19fd46c4c457d77adaef"
+      "sha256": "0509f9a1c3be0bdfee3204269b310a5356a7be5cfb0fae33220a44f6fbc1df2e"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/README.md",
-      "sha256": "cc19487d9d7e9ad76e0837205ec07b31bac2b84a14262cc6435c79cb8867744b"
+      "sha256": "abbd3194eba6f8da06766ef1eb6b6cee0b874a06827a0a02f17b47b0bb8fc36b"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasModels.swift",
-      "sha256": "616f2b6fcda4e41d97c95058d13706a4c5457295c04457b5098a237a30213668"
+      "sha256": "b6fd37404e1d63b272c51eb094307d1d32e2e8c344e2ec21a91a6faea4948828"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasParsing.swift",
-      "sha256": "44bbdc3d72214167691e0c90d55056cec869603b3626fea4100e841d19c5f7bf"
+      "sha256": "35140a3525b6c4a23060de7ba733c14510b5742209265f3b7b20b5d1c12e4621"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasProvider.swift",
-      "sha256": "c9ad232e650ad9d818defa7da96c77fb0e43a93971aa07fb8d5ef3ddd12d1d1c"
+      "sha256": "6d7f2c1437bce5a941a18692e22a6e780ea45c6dac4cd70b860b130cf8af7f54"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasRequestOptions.swift",
-      "sha256": "3e29a4a13839bc015a6c0a393808ae0a4bf572beb3f4a1047454ba398372d24f"
+      "sha256": "477c56e83909f6f0e8291da41fd16efb571f7ecf540adc0f8338af5621ce1aed"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasToolsAndMessages.swift",
-      "sha256": "e6b685b7fb9eda9bb3ddf50320ac513a81d2e49f755c39c0eaad495ba1410ed6"
+      "sha256": "4bc90b678ae70df8705aa71883b3ba74140a84f19f4252e6acf440837bfa18fa"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Tests/SwiftAICerebrasTests/CerebrasProviderTests.swift",
-      "sha256": "3d8849427e3131324598089b0b10a91dea302643d405adb133ba092fb2c16301"
+      "sha256": "6f4476b4299940ae6c89e47cbb82eccedac04f044ae227acc1074f30f4a85d8e"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Tests/SwiftAICerebrasTests/FixtureDownloadTransport.swift",
@@ -102,6 +102,10 @@
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Tests/SwiftAICerebrasTests/Weekly20261101CredentialsTests.swift",
       "sha256": "629e18446916fb3dc8c0f889f9c2b3b0333237a88c337762ab35f1d5cd8785fd"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-cerebras/Tests/SwiftAICerebrasTests/Weekly20261108QueueTests.swift",
+      "sha256": "8a0edb977d3961cae85d84eb420f706e40b3ca53362ac45c8a696d6002654bed"
     }
   ]
 }
