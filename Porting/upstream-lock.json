@@ -3,19 +3,19 @@
   "packages": [
     {
       "name": "@ai-sdk/cerebras",
-      "reviewedVersion": "3.0.87",
+      "reviewedVersion": "3.0.92",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.cerebras`, `CerebrasLanguageModel`, `CerebrasProviderTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json",
+      "evidence": "`AIProviders.cerebras`, `CerebrasLanguageModel`, `CerebrasProviderTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/WeeklyUpstreamAudit20261114.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-0UvtQOu5rp8qtrtWKO+sckC56WGro1KxhGbvBwGGna6EOITi4cKmMavfjcXfupb4Pph+0IHZBQ8zfB7zYIeNpQ==",
-      "sourceRef": "npm:@ai-sdk/cerebras@3.0.87",
-      "testRef": "0f3a85f92d1ce06ccde01d662407ef83e097a712",
+      "archiveIntegrity": "sha512-hr0MgQhUUTQu5AfdX/wRZCEO87QfBs6mGxdOff37bxlGtZEBRjyqSpcA0En9OTaLFZFLF2uZAh4TAkxmcgTdyQ==",
+      "sourceRef": "npm:@ai-sdk/cerebras@3.0.92",
+      "testRef": "8bc7652cdb13fc84722666eb93f45acd0d131eee",
       "testRefRelationship": "matching-release",
       "contractFamilies": [
         "LanguageModelV4",
         "ProviderV4"
       ],
-      "contractReview": "2026-11-08: published declarations/source and exact matching-release changed tests reviewed; native implementations, per-file dispositions and broader retained gaps are recorded in Docs/WeeklyUpstreamAudit20261108.json. Reviewed delta is not full-package or live-service parity."
+      "contractReview": "2026-11-14: verified published source/declarations and exact matching-release changed tests reviewed separately; native ports, per-file dispositions and retained gaps are recorded in Docs/WeeklyUpstreamAudit20261114.json. Delta review is not full-package or live-service parity."
     }
   ]
 }
