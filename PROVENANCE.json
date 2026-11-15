@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-cerebras",
-  "version": "1.2.1",
-  "releaseID": "weekly-upstream-20261114",
+  "version": "1.2.2",
+  "releaseID": "weekly-upstream-20261115",
   "source": {
-    "commit": "07fbf86b82d83d9724bd03622e9e87e74395286f",
-    "baseCommit": "07fbf86b82d83d9724bd03622e9e87e74395286f",
+    "commit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
+    "baseCommit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
     "workingTree": false,
-    "inputsSHA256": "63e472c0fe891cb7636d225e1c6467e4761dc3721be68081f2afa9f0b656bb29"
+    "inputsSHA256": "5508ffc6347bffaed13fb29409eb856df9a7796d3ebdcb6f623d1e8871b52999"
   },
   "dependencies": [
     {
@@ -21,28 +21,28 @@
   ],
   "changes": [
     {
-      "id": "weekly-upstream-20261114",
-      "notes": "Refresh the versioned request identity while retaining the current native request, response and stream behavior. Internal upstream model-catalog reorganizations preserve the existing native policies. Reviewed npm delta: @ai-sdk/cerebras 3.0.87 to 3.0.92. Validation: `node Scripts/test-packages.mjs` passed all 52 owning suites and 1731 facade tests; tooling 27/27, generation/isolation checks, standalone exports and 106 minimum/latest consumers, documentation check and 101-page build passed. Publication requires green exact-source Swift 6.3.3 CI. Paid/live verification and full-package parity are not claimed.",
-      "compatibility": "Compatible behavior/header correction. Original public selectors are preserved. npm baselines and Swift SemVer are independent; this reviewed delta does not establish full-package or live-service parity."
+      "id": "weekly-upstream-20261115",
+      "notes": "Align the versioned request identity with the reviewed published package while retaining native open String model IDs and existing request, response, option, error, stream and telemetry behavior. Derived TypeScript model-ID/catalog reorganizations preserve the existing native runtime policies. Reviewed npm delta: @ai-sdk/cerebras 3.0.92 to 3.0.93. Validation passed: node Scripts/test-packages.mjs (55 owning packages, 2451 owning tests and 1736 compatibility tests), generation checks, 27 tooling tests, isolation/version checks, deterministic exports and minimum-dependency consumers. Documentation check/build passed (104 pages). Publication is gated by exact-source Swift 6.3.3 CI; subsequent public refs and clients are recorded in Docs/ReleaseVerification20261115.json. Paid/live-service checks were not run; this delta does not claim full-package parity.",
+      "compatibility": "Compatible versioned request identity correction; existing public selectors and dependency minimums remain. npm baselines and Swift SemVer are independent."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-cerebras",
   "upstream": [
     {
       "name": "@ai-sdk/cerebras",
-      "reviewedVersion": "3.0.92",
+      "reviewedVersion": "3.0.93",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.cerebras`, `CerebrasLanguageModel`, `CerebrasProviderTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/WeeklyUpstreamAudit20261114.json",
+      "evidence": "`AIProviders.cerebras`, `CerebrasLanguageModel`, `CerebrasProviderTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/WeeklyUpstreamAudit20261114.json; 2026-11-15 delta: Docs/WeeklyUpstreamAudit20261115.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-hr0MgQhUUTQu5AfdX/wRZCEO87QfBs6mGxdOff37bxlGtZEBRjyqSpcA0En9OTaLFZFLF2uZAh4TAkxmcgTdyQ==",
-      "sourceRef": "npm:@ai-sdk/cerebras@3.0.92",
-      "testRef": "8bc7652cdb13fc84722666eb93f45acd0d131eee",
+      "archiveIntegrity": "sha512-0UWYVn0mivgDXh0HAYqUM+p/v+Em7jiFUoppD9apSfNTG1LuBYidVhZ80j2qRecG47vhp2r8eoLcFq4mqiwHDg==",
+      "sourceRef": "npm:@ai-sdk/cerebras@3.0.93",
+      "testRef": "0e8e0543aeda7d4dd4ce6eade0d5b7d5a43644c1",
       "testRefRelationship": "matching-release",
       "contractFamilies": [
         "LanguageModelV4",
         "ProviderV4"
       ],
-      "contractReview": "2026-11-14: verified published source/declarations and exact matching-release changed tests reviewed separately; native ports, per-file dispositions and retained gaps are recorded in Docs/WeeklyUpstreamAudit20261114.json. Delta review is not full-package or live-service parity."
+      "contractReview": "2026-11-15: published source/declarations and exact matching-release tests reviewed separately. Native delta scenarios, per-file dispositions, unchanged-catalog evidence and explicit remaining gaps are recorded in Docs/WeeklyUpstreamAudit20261115.json. Required checks remain a separate gate; no full-package/live-service parity claim."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -61,7 +61,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Porting/map.json",
-      "sha256": "53076bd06d0644bab4193b5ac0db4342b1b3cab964a8594aaa55d4a49e7987f9"
+      "sha256": "c123da8d8f5af6f1d4970282b00c456b8a0008edc40080c71472d7e7f4138c30"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/README.md",
@@ -77,7 +77,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasProvider.swift",
-      "sha256": "37e146d8f14349f38bc5beb387d1fdc8d696bed2efe81571f09aabbe9bf06658"
+      "sha256": "6a282d655e32858e08c0b1420c7132834f0f18bfb31cd06d017ae8b51a7f137d"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasRequestOptions.swift",
@@ -89,7 +89,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Tests/SwiftAICerebrasTests/CerebrasProviderTests.swift",
-      "sha256": "b7d50738e0ae4d4cb313238b41d04f0b035e87af9e8516733fbb5f929ec742dc"
+      "sha256": "edf86199e24eae0c32f761ae437d002dd8aaf95fd89054538cb2684bf4b2e852"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Tests/SwiftAICerebrasTests/FixtureDownloadTransport.swift",
