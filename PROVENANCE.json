@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-cerebras",
-  "version": "1.2.2",
-  "releaseID": "weekly-upstream-20261115",
+  "version": "1.3.0",
+  "releaseID": "upstream-parity-20261116",
   "source": {
-    "commit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
-    "baseCommit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
+    "commit": "1c457dea36be42376a6853aecd5c48ffc4942178",
+    "baseCommit": "1c457dea36be42376a6853aecd5c48ffc4942178",
     "workingTree": false,
-    "inputsSHA256": "5508ffc6347bffaed13fb29409eb856df9a7796d3ebdcb6f623d1e8871b52999"
+    "inputsSHA256": "d7b8f52add7828d7e9ed20418fe072e7db03e75483a168bb7f5c34e9d2a04a13"
   },
   "dependencies": [
     {
       "package": "swift-ai-core",
-      "from": "1.3.0"
+      "from": "1.6.0"
     },
     {
       "package": "swift-ai-openai-compatible",
@@ -21,9 +21,9 @@
   ],
   "changes": [
     {
-      "id": "weekly-upstream-20261115",
-      "notes": "Align the versioned request identity with the reviewed published package while retaining native open String model IDs and existing request, response, option, error, stream and telemetry behavior. Derived TypeScript model-ID/catalog reorganizations preserve the existing native runtime policies. Reviewed npm delta: @ai-sdk/cerebras 3.0.92 to 3.0.93. Validation passed: node Scripts/test-packages.mjs (55 owning packages, 2451 owning tests and 1736 compatibility tests), generation checks, 27 tooling tests, isolation/version checks, deterministic exports and minimum-dependency consumers. Documentation check/build passed (104 pages). Publication is gated by exact-source Swift 6.3.3 CI; subsequent public refs and clients are recorded in Docs/ReleaseVerification20261115.json. Paid/live-service checks were not run; this delta does not claim full-package parity.",
-      "compatibility": "Compatible versioned request identity correction; existing public selectors and dependency minimums remain. npm baselines and Swift SemVer are independent."
+      "id": "upstream-parity-20261116",
+      "notes": "Request conversion matches upstream; function tools send only their input schema.",
+      "compatibility": "Source-compatible; changes are additive. Request bodies, results, warnings and errors change to match the reviewed upstream package."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-cerebras",
@@ -32,7 +32,7 @@
       "name": "@ai-sdk/cerebras",
       "reviewedVersion": "3.0.93",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.cerebras`, `CerebrasLanguageModel`, `CerebrasProviderTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/WeeklyUpstreamAudit20261114.json; 2026-11-15 delta: Docs/WeeklyUpstreamAudit20261115.json",
+      "evidence": "`AIProviders.cerebras`, `CerebrasLanguageModel`, `CerebrasProviderTests.swift`; 2026-11-01 delta: Docs/Archive/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/Archive/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/Archive/WeeklyUpstreamAudit20261114.json; 2026-11-15 delta: Docs/Archive/WeeklyUpstreamAudit20261115.json",
       "reviewStatus": "imported-reviewed-with-gaps",
       "archiveIntegrity": "sha512-0UWYVn0mivgDXh0HAYqUM+p/v+Em7jiFUoppD9apSfNTG1LuBYidVhZ80j2qRecG47vhp2r8eoLcFq4mqiwHDg==",
       "sourceRef": "npm:@ai-sdk/cerebras@3.0.93",
@@ -42,7 +42,7 @@
         "LanguageModelV4",
         "ProviderV4"
       ],
-      "contractReview": "2026-11-15: published source/declarations and exact matching-release tests reviewed separately. Native delta scenarios, per-file dispositions, unchanged-catalog evidence and explicit remaining gaps are recorded in Docs/WeeklyUpstreamAudit20261115.json. Required checks remain a separate gate; no full-package/live-service parity claim."
+      "contractReview": "2026-11-15: published source/declarations and exact matching-release tests reviewed separately. Native delta scenarios, per-file dispositions, unchanged-catalog evidence and explicit remaining gaps are recorded in Docs/Archive/WeeklyUpstreamAudit20261115.json. Required checks remain a separate gate; no full-package/live-service parity claim."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -61,15 +61,15 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Porting/map.json",
-      "sha256": "c123da8d8f5af6f1d4970282b00c456b8a0008edc40080c71472d7e7f4138c30"
+      "sha256": "939169e8235258c132dd16da267e33c0d7a32d1e6c87275e0cf231e67ae3b720"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/README.md",
-      "sha256": "abbd3194eba6f8da06766ef1eb6b6cee0b874a06827a0a02f17b47b0bb8fc36b"
+      "sha256": "c1e883a1aaac02adc5762bbaf46394dffd499483ae8939be2a19f287105c50f6"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasModels.swift",
-      "sha256": "b6fd37404e1d63b272c51eb094307d1d32e2e8c344e2ec21a91a6faea4948828"
+      "sha256": "154becd14ee128f5dfea09c2ea66c9efe95bcc60670e465b087c3eb4cc7eafca"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasParsing.swift",
@@ -81,15 +81,23 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasRequestOptions.swift",
-      "sha256": "477c56e83909f6f0e8291da41fd16efb571f7ecf540adc0f8338af5621ce1aed"
+      "sha256": "823010317899f0668cf70e2f9413c17ddce3aa1bec0d79f2724627da3639f66e"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Sources/SwiftAICerebras/CerebrasToolsAndMessages.swift",
-      "sha256": "4bc90b678ae70df8705aa71883b3ba74140a84f19f4252e6acf440837bfa18fa"
+      "sha256": "32838c5bba99be532460c648e4ffa3bc24a6f25a670dd32ef4195ab6ce8fd4c1"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Tests/SwiftAICerebrasTests/CerebrasProviderTests.swift",
-      "sha256": "edf86199e24eae0c32f761ae437d002dd8aaf95fd89054538cb2684bf4b2e852"
+      "sha256": "5c29161974c3c3acf4f506d9f75f5a2959c51169eef1f11b5ad415f1c0b702a9"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-cerebras/Tests/SwiftAICerebrasTests/CerebrasUpstreamFixtures.swift",
+      "sha256": "b61ad2c22e5bae0cfdfd162f5549b8b531770c24898b4faf9e081b8bfb3e740c"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-cerebras/Tests/SwiftAICerebrasTests/CerebrasUpstreamParityTests.swift",
+      "sha256": "6acdcdbaf286125ffeb5570970450cc6fa45df6aa30346a17906678275a02fdb"
     },
     {
       "canonicalPath": "Packages/swift-ai-cerebras/Tests/SwiftAICerebrasTests/FixtureDownloadTransport.swift",
